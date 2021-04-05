@@ -10,14 +10,21 @@ namespace Ejercicio3
     {
         static void Main(string[] args)
         {
-            char tecla;
+            // 3. Lea las teclas presionadas y finalice al presionar la tecla "X"
+            ConsoleKeyInfo tecla;
             do
             {
-                Console.WriteLine("Precione las teclas.");
-                tecla = Convert.ToChar(Console.ReadLine());
-                Console.WriteLine("Las teclas presionadas son: " + tecla);
-                Console.WriteLine("Para finalizar, presione la tecla: X ");
-            } while (tecla != 'x');
+                Console.WriteLine("Ingrese una tecla");
+                char entrada = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine($"Usted ha presionado la tecla {entrada}");
+                Console.WriteLine("Para finalizar presiones la tecla 'X'");
+                tecla = Console.ReadKey(true);
+            }
+            while (tecla.Key != ConsoleKey.X);
+            if (tecla.Key == ConsoleKey.X)
+            {
+                Console.WriteLine("Usted ha presionado la tecla 'X' para finalizar.");
+            }
         }
     }
 }
